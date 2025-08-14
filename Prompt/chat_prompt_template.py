@@ -9,11 +9,11 @@ model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 # List of Messages
 
 chat_template = ChatPromptTemplate([
-    ("system", "You are a helpful {domin} expert. give the ans in sort turm no need to explain"),
+    ("system", "You are a helpful {domain} expert. give the ans in sort term no need to explain"),
     ("human", "tell me about {topic}")
 ])
 
-prompt =  chat_template.invoke({"domin":"cricket", "topic":"IPL 2023"})
+prompt =  chat_template.invoke({"domain":"cricket", "topic":"IPL 2023"})
 
 response = model.invoke(prompt)
 chat_template.append(("ai", response.content))
