@@ -1,13 +1,11 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from typing import TypedDict, Annotated, Optional, Literal
 
 load_dotenv()
 
-model = ChatGoogleGenerativeAI(
-    model="gemini-2.5-pro",
-    temperature=0
-)
+
+model = ChatGroq(model="deepseek-r1-distill-llama-70b")
 
 # Define TypedDict in PascalCase
 class Review(TypedDict):
