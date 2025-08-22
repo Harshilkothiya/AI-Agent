@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-model = ChatGroq(model="openai/gpt-oss-20b")
+model = ChatGroq(model="llama-3.1-8b-instant")
 
 class Feedback(BaseModel):
     sentiment : Literal["positive", "negative"] = Field(description="give me the sentiment of the feedback")
