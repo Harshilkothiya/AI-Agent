@@ -8,7 +8,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 model1 = ChatGroq(model="openai/gpt-oss-20b")
+
 model2 = ChatGoogleGenerativeAI(model = "gemini-2.5-flash", temperature=0.8)
+
 prompt1 = PromptTemplate(
     template="generate simple and short note for the following text \n {text}",
     input_variables=['text']
