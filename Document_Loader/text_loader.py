@@ -12,6 +12,7 @@ def loader(file_name):
     loader = TextLoader(file_name, encoding='utf-8')
     doc = loader.load()
     return {'text' : doc[0]}
+    # return doc
 
 
 model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
@@ -29,3 +30,7 @@ chain = loader_runnable | prompt | model | parser
 
 response = chain.invoke('d:/AI-Agent/Document_Loader/cricket.txt')
 print(response)
+
+
+# doc = loader('d:/AI-Agent/Document_Loader/cricket.txt')
+# print(len(doc))
